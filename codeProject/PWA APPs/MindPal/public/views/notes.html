@@ -1,0 +1,23 @@
+<!-- public/views/notes.html -->
+<div class="notes-container">
+    <div class="notes-header">
+      <h1>Notes</h1>
+      <div class="notes-actions">
+        <div class="search-container">
+          <input type="text" id="search-notes" placeholder="Search notes...">
+          <i class="icon-search"></i>
+        </div>
+        <button id="new-note" class="btn-primary">
+          <i class="icon-add"></i> New Note
+        </button>
+      </div>
+    </div>
+    
+    <div id="notes-list" class="notes-grid">
+      <!-- Notes will be loaded dynamically -->
+      <div class="loader"></div>
+    </div>
+    
+    <!-- Note Editor Container -->
+    <div id="note-editor-container"></div>
+  </div>

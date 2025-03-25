@@ -1,0 +1,152 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4285F4">
+  <meta name="description" content="MindPal - Your all-in-one productivity and wellness app">
+  
+  <title>MindPal</title>
+  
+  <!-- PWA manifest -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- iOS PWA support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MindPal">
+  <link rel="apple-touch-icon" href="/icons/apple-icon-180.png">
+  
+  <!-- Splash screens for iOS -->
+  <link rel="apple-touch-startup-image" href="/splashscreens/apple-splash-2048-2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="/splashscreens/apple-splash-1668-2388.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="/splashscreens/apple-splash-1536-2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="/splashscreens/apple-splash-1125-2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="/splashscreens/apple-splash-1242-2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="/splashscreens/apple-splash-828-1792.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="/splashscreens/apple-splash-1242-2208.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="/splashscreens/apple-splash-750-1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="/splashscreens/apple-splash-640-1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/styles.css">
+  
+  <!-- Preload fonts -->
+  <link rel="preload" href="/fonts/mindpal-icons.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="icon-menu"></i>
+      </button>
+      
+      <div class="logo">
+        <img src="/icons/logo.svg" alt="MindPal Logo">
+        <span>MindPal</span>
+      </div>
+      
+      <div class="header-controls">
+        <button id="search-button" title="Search">
+          <i class="icon-search"></i>
+        </button>
+        
+        <button id="install-button" title="Install App" style="display: none;">
+          <i class="icon-download"></i>
+        </button>
+        
+        <button id="user-button" title="User Settings">
+          <i class="icon-user"></i>
+        </button>
+      </div>
+    </header>
+    
+    <div id="offline-indicator" class="offline-indicator">
+      You are currently offline. Some features may be limited.
+    </div>
+    
+    <nav id="main-nav">
+      <ul>
+        <li>
+          <a href="#" data-view="dashboard" class="active">
+            <i class="icon-dashboard"></i>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="#" data-view="notes">
+            <i class="icon-note"></i>
+            Notes
+          </a>
+        </li>
+        <li>
+          <a href="#" data-view="tasks">
+            <i class="icon-task"></i>
+            Tasks
+          </a>
+        </li>
+        <li>
+          <a href="#" data-view="media">
+            <i class="icon-media"></i>
+            Media
+          </a>
+        </li>
+        <li>
+          <a href="#" data-view="utilities">
+            <i class="icon-utility"></i>
+            Utilities
+          </a>
+        </li>
+        <li>
+          <a href="#" data-view="wellness">
+            <i class="icon-wellness"></i>
+            Wellness
+          </a>
+        </li>
+        <li>
+          <a href="#" data-view="settings">
+            <i class="icon-settings"></i>
+            Settings
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <main id="main-content">
+      <!-- Content will be loaded dynamically -->
+      <div class="loader"></div>
+    </main>
+    
+    <!-- Note Editor Container -->
+    <div id="note-editor-container"></div>
+    
+    <!-- Task Editor Container -->
+    <div id="task-editor-container"></div>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="/js/db.js"></script>
+  <script src="/js/app.js"></script>
+  
+  <!-- iOS PWA installation prompt -->
+  <div id="ios-install-prompt" style="display: none;">
+    <div class="ios-prompt-container">
+      <div class="ios-prompt-header">
+        <h3>Install MindPal</h3>
+        <button id="close-ios-prompt">&times;</button>
+      </div>
+      <div class="ios-prompt-body">
+        <p>Install MindPal on your home screen for easy access when offline.</p>
+        <div class="ios-steps">
+          <p>1. Tap <i class="icon-share"></i> below</p>
+          <p>2. Select "Add to Home Screen"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

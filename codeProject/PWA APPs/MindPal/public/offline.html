@@ -1,0 +1,54 @@
+<!-- public/offline.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're Offline - MindPal</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .offline-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 24px;
+    }
+    
+    .offline-icon {
+      font-size: 64px;
+      color: var(--primary-color);
+      margin-bottom: 24px;
+    }
+    
+    .offline-message {
+      max-width: 500px;
+      margin-bottom: 32px;
+    }
+    
+    .offline-actions {
+      display: flex;
+      gap: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="offline-page">
+    <div class="offline-icon">
+      <i class="icon-offline"></i>
+    </div>
+    
+    <div class="offline-message">
+      <h1>You're Offline</h1>
+      <p>It looks like you've lost your internet connection. Don't worry, you can still use many features of MindPal in offline mode.</p>
+    </div>
+    
+    <div class="offline-actions">
+      <button onclick="window.location.href='/'" class="btn-primary">Go to Dashboard</button>
+      <button onclick="window.location.reload()" class="btn-secondary">Try Again</button>
+    </div>
+  </div>
+</body>
+</html>

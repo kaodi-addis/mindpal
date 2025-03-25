@@ -1,0 +1,42 @@
+<!-- public/views/wellness.html -->
+<div class="wellness-container">
+    <h1>Wellness</h1>
+    
+    <div class="meditation-container" id="meditation-container">
+      <div class="meditation-header">
+        <h2>Meditation Guide</h2>
+        <p>Take a moment to relax and clear your mind with guided meditation sessions.</p>
+      </div>
+      
+      <div class="breathing-exercise" id="breathing-exercise">
+        <h3>Breathing Exercise</h3>
+        <div class="breathing-circle">
+          <span class="breathing-text">Breathe</span>
+        </div>
+        
+        <div class="timer-display" id="meditation-timer">
+          5:00
+        </div>
+        
+        <div class="meditation-controls">
+          <button id="start-meditation" class="btn-primary">
+            <i class="icon-play"></i> Start
+          </button>
+          <button id="pause-meditation" class="btn-secondary" disabled>
+            <i class="icon-pause"></i> Pause
+          </button>
+          <button id="stop-meditation" class="btn-secondary" disabled>
+            <i class="icon-stop"></i> Stop
+          </button>
+        </div>
+      </div>
+      
+      <div class="meditation-sessions">
+        <h3>Guided Sessions</h3>
+        <div id="meditation-sessions-list" class="meditation-sessions-grid">
+          <!-- Meditation sessions will be loaded dynamically -->
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div>
+  </div>

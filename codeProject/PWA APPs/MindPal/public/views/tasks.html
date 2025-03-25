@@ -1,0 +1,29 @@
+<!-- public/views/tasks.html -->
+<div class="tasks-container">
+    <div class="tasks-header">
+      <h1>Tasks</h1>
+      <div class="tasks-actions">
+        <div class="filter-container">
+          <select id="filter-tasks">
+            <option value="all">All Tasks</option>
+            <option value="pending">Pending Tasks</option>
+            <option value="completed">Completed Tasks</option>
+            <option value="today">Due Today</option>
+            <option value="week">Due This Week</option>
+            <option value="high-priority">High Priority</option>
+          </select>
+        </div>
+        <button id="new-task" class="btn-primary">
+          <i class="icon-add"></i> New Task
+        </button>
+      </div>
+    </div>
+    
+    <div id="tasks-list">
+      <!-- Tasks will be loaded dynamically -->
+      <div class="loader"></div>
+    </div>
+    
+    <!-- Task Editor Container -->
+    <div id="task-editor-container"></div>
+  </div>
